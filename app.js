@@ -28,14 +28,14 @@ var server = http.createServer(function(req, res) {
 
   // console.log(url.parse(path,true));
 
-  // var id=url.parse(path,true).query.id;
+  var id=url.parse(path,true).query.id;
   // console.log(id);
-  //  var path=url.parse(path,true).pathname;
+   var path=url.parse(path,true).pathname;
   
   // console.log( path);
   if (path === "/product") {
 
-    var ProductHtml = replace(templateProduct, jsonObj[0]);
+    var ProductHtml = replace(templateProduct, jsonObj[id]);
     res.writeHead(200, { "Content-type": "text/html" });
     res.end(ProductHtml);
     // res.end("products page");
@@ -65,7 +65,7 @@ var server = http.createServer(function(req, res) {
   }
 });
 
-var port= process.env.PORT||80;
+var port= process.env.PORT||3000;
 server.listen(port);
 console.log("Server has started at port"+port);
 

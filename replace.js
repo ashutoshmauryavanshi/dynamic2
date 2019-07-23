@@ -13,11 +13,11 @@ output=output.replace(/{%QUANTITY%}/g,productAt0["quantity"]);
 output=output.replace(/{%PRICE%}/g,productAt0["price"]);
 output=output.replace(/{%DESCRIPTION%}/g,productAt0["description"]);
 output=output.replace(/{%NUTRIENTS%}/g,productAt0["nutrients"]);
-output=output.replace(/{FROM%}/g,productAt0["from"]);
-output=output.replace(/{ID%}/g,productAt0["id"]);
+output=output.replace(/{%FROM%}/g,productAt0["from"]);
+output=output.replace(/{%ID%}/g,productAt0["id"]);
 
 if(productAt0["organic"]===false){
-    output=output.replace(/{%NOT_ORGANIC%}/g,"not-rganic");
+    output=output.replace(/{%NOT_ORGANIC%}/g,"not-organic");
 }
 return output;
 }
